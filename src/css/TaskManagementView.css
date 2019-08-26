@@ -4,3 +4,7 @@
   display: flex;
   background-color: #F2F4F5;
 }
+
+.tmv-ctn .right-side-view {
+  width: 100%;
+}

@@ -21,7 +21,6 @@ class Header extends React.Component {
     return (
       <div className="header-ctn">
 
-        <div className="login-wrapper">
           <form className="search-form" onSubmit={this.handleSubmit}>
             <input
               type="search"
@@ -30,9 +29,13 @@ class Header extends React.Component {
               value={this.state.username}
               placeholder="Search"
             />
-
           </form>
-        </div>
+
+          <div className="settings">
+            <p id="daysCount">{this.props.daysLeft} days left</p>
+            <div id="upgrade">Upgrade</div>
+            <div id="settings">Set</div>
+          </div>
       </div>
     );
   }

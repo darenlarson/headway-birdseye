@@ -11,70 +11,71 @@ class TaskManagementView extends React.Component {
       tasks: [
         {
           project: "Birdseye - Application",
-          title: "V1Interview Scripts",
+          title: "Fix UX issues",
           dueDate: "Today",
           dueTime: "8:00am",
           complete: false
         },
         {
           project: "Birdseye - Application",
-          title: "Review Scripts",
+          title: "Adjust final filtering",
           dueDate: "Today",
           dueTime: "8:00am",
           complete: false
         },
         {
           project: "Birdseye - Application",
-          title: "Customer Map",
-          dueDate: "Today",
+          title: "Title",
+          dueDate: "Thursday",
           dueTime: "8:00am",
-          complete: false
+          complete: true
         },
         {
           project: "Birdseye - Application",
           title: "V1 DOB to web",
-          dueDate: "Today",
+          dueDate: "Thursday",
           dueTime: "8:00am",
           complete: false
         },
         {
           project: "Birdseye - Application",
           title: "Order Business Cards",
-          dueDate: "Today",
+          dueDate: "Thursday",
           dueTime: "8:00am",
           complete: false
         },
         {
           project: "Birdseye - Application",
           title: "Schedule Dribble Post",
-          dueDate: "Today",
+          dueDate: "Thursday",
           dueTime: "8:00am",
           complete: false
         },
         {
           project: "Birdseye - Application",
           title: "Send Invites",
-          dueDate: "Today",
+          dueDate: "Thursday",
           dueTime: "8:00am",
           complete: false
         },
         {
           project: "Birdseye - Application",
           title: "UX & Wireframing",
-          dueDate: "Today",
+          dueDate: "Thursday",
           dueTime: "8:00am",
           complete: false
         },
         {
           project: "Birdseye - Application",
           title: "Prototype Creation",
-          dueDate: "Today",
+          dueDate: "Thursday",
           dueTime: "8:00am",
           complete: false
         }
       ],
       projects: ["Birdseye - Application"],
-      list: "all"
+      list: "all",
+      daysLeft: 10,
     };
   }
 
@@ -92,9 +93,11 @@ class TaskManagementView extends React.Component {
           changeList={this.changeList}
         />
 
-        <div>
-          <Header />
-          {/* <ScheduledTasks /> */}
+        <div className="right-side-view">
+          <Header daysLeft={this.state.daysLeft}/>
+          <ScheduledTasks
+            tasks={this.state.tasks}
+          />
         </div>
       </div>
     );

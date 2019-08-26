@@ -1,5 +1,6 @@
 .sidebar-ctn {
-  width: 400px;
+  width: 30%;
+  min-width: 400px;
   background-color: #FFFFFF;
 }
 
