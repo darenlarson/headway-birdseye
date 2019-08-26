@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import '../css/Login.css';
 
 class Login extends React.Component {
@@ -18,6 +17,8 @@ class Login extends React.Component {
 
   // Submits form and invokes loginUser()
   handleSubmit = e => {
+    e.preventDefault();
+    this.props.history.push("/task-manager");
   };
 
   render() {
@@ -28,13 +29,12 @@ class Login extends React.Component {
 
         <form className="login-form" onSubmit={this.handleSubmit}>
 
-          <label for="email">Email Address</label>
-          <input required type="text" id="email" name="username" onChange={this.handleChange} value={this.state.username} placeholder="Email Address" />
+          <label>Email Address</label>
+          <input required type="email" id="email" name="username" onChange={this.handleChange} value={this.state.username} placeholder="Email Address" />
 
-          <label for="password">Password</label>
+          <label>Password</label>
           <input required type="password" id="password" name="password" onChange={this.handleChange} value={this.state.password} placeholder="Password" />
-
-          <Link to="/task-manager"><button type="submit">SIGN IN</button></Link>
+          <button type="submit">SIGN IN</button>
 
         </form>
 

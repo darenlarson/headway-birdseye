@@ -8,6 +8,7 @@ const TaskList = props => {
 
       {props.tasks.map(task => (
         <Task
+          key={task.id}
           project={task.project}
           title={task.title}
           dueDate={task.dueDate}

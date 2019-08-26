@@ -3,6 +3,7 @@
   justify-content: space-between;
   padding: 20px 5px;
   border-bottom: 1px solid lightgrey;
+  background-color: white;
 }
 
 .checkbox-title {
@@ -37,6 +38,8 @@
 
 .right-side-info {
   display: flex;
+  justify-content: space-between;
+  min-width: 75px;
 }
 
 .day {
@@ -50,6 +53,15 @@
 }
 
 .right-side-info img {
-  width: 100%;
+  /* width: 100%; */
+  width: 20px;
   object-fit: contain;
+}
+
+.completed-task {
+  opacity: .5;
+}
+
+.completed-title {
+  text-decoration: line-through;
 }

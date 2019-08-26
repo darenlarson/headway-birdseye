@@ -9,13 +9,13 @@ const LoginView = props => {
     <div className="login-view-ctn">
 
       <section className="info-section">
-        <div className="logo-ctn"><img src={logo} /></div>
+        <div className="logo-ctn"><img src={logo} alt="MemSQL logo" /></div>
         <h1>Welcome to Birdseye!</h1>
-        <Login />
+        <Login history={props.history} />
       </section>
 
       <div className="wallpaper">
-        <img src={loginWallpaper} />
+        <img src={loginWallpaper} alt="background" />
       </div>
 
     </div>

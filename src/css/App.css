@@ -2,3 +2,18 @@ body {
   font-family: 'Work Sans', sans-serif;
   letter-spacing: 1px;
 }
+
+.create-task-btn {
+  border: none;
+  color: #7857FF;
+  width: 100%;
+  padding: 30px;
+  background-color: #F6F8FF;
+  font-size: 1.2rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.create-task-btn:hover {
+  font-weight: bold;
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/Header.css";
+import cog from '../assets/cog.png';
 
 class Header extends React.Component {
   constructor(props) {
@@ -34,7 +35,7 @@ class Header extends React.Component {
           <div className="settings">
             <p id="daysCount">{this.props.daysLeft} days left</p>
             <div id="upgrade">Upgrade</div>
-            <div id="settings">Set</div>
+            <img src={cog} alt="settings" />
           </div>
       </div>
     );
