@@ -1,0 +1,55 @@
+.task-ctn {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 5px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.checkbox-title {
+  display: flex;
+}
+
+.checkbox-ctn {
+  margin: 0 10px 0 0px;
+  display: flex;
+  align-items: center;
+}
+
+.fake-checkbox {
+  width: 15px;
+  height: 15px;
+  border: 1px solid grey;
+  background-color: #F6F8FF;
+}
+
+.project-title-ctn {
+
+}
+
+.project-title-ctn p {
+  font-size: 1.2rem;
+  color: lightgrey;
+}
+
+.project-title-ctn h5 {
+  font-size: 1.6rem;
+}
+
+.right-side-info {
+  display: flex;
+}
+
+.day {
+  font-size: 1.4rem;
+  color: grey;
+}
+
+.time {
+  font-size: 1rem;
+  color: grey;
+}
+
+.right-side-info img {
+  width: 100%;
+  object-fit: contain;
+}

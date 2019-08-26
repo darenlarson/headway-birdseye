@@ -1,0 +1,43 @@
+.sidebar-ctn {
+  width: 400px;
+  background-color: #FFFFFF;
+}
+
+.sidebar-ctn h1 {
+  margin: 15px 0 30px 0;
+  margin-left: 30px;
+  color: #071584;
+}
+
+.tabs {
+  display: flex;
+  font-size: 1.4rem;
+  margin-left: 15px;
+}
+
+.tabs div {
+  font-size: 1.2rem;
+  margin-right: 20px;
+  width: 60px;
+  text-align: center;
+  cursor: pointer;
+  color: grey;
+  padding: 3px 0;
+}
+
+.tabs div:hover {
+  color: #071584;
+}
+
+.tabs .selected {
+  color: #071584;
+  border-bottom: 1px solid #071584;
+}
+
+.create-task-btn {
+  border: none;
+  color: #7857FF;
+  width: 100%;
+  padding: 30px;
+  background-color: #F6F8FF;
+}

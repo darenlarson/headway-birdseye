@@ -1,0 +1,8 @@
+.header-ctn {
+  background-color: #071584;
+}
+
+.header-ctn input::placeholder {
+  /* color: red; */
+  transform: rotate(180deg);
+}

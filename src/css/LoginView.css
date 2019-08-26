@@ -1,0 +1,36 @@
+.login-view-ctn {
+  display: flex;
+}
+
+.info-section {
+  margin-top: 45px;
+  margin: 45px 100px;
+}
+
+.wallpaper {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.wallpaper img {
+  width: 100%;
+  height: 101vh;
+}
+
+
+
+.logo-ctn {
+  margin-bottom: 60px;
+  width: 80px;
+}
+
+.logo-ctn img {
+  width: 100%;
+}
+
+.login-view-ctn h1 {
+  margin-bottom: 70px;
+  color: #414141;
+  font-size: 2.8rem;
+  font-weight: 350;
+}

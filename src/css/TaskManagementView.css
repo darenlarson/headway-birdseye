@@ -1,0 +1,6 @@
+.tmv-ctn {
+  border: 1px solid green;
+  margin: 0 10px;
+  display: flex;
+  background-color: #F2F4F5;
+}
