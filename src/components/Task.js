@@ -6,7 +6,6 @@ const Task = props => {
   const { project, title, dueDate, dueTime, completed } = props;
 
   return (
-    // <div className="task-ctn">
     <div className={`task-ctn ${completed === true ? 'completed-task' : undefined}`} >
       <div className="checkbox-title">
         <div className="checkbox-ctn">

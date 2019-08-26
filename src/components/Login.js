@@ -24,27 +24,18 @@ class Login extends React.Component {
   render() {
     return (
       <div className="login-wrapper">
-
-
-
+        
         <form className="login-form" onSubmit={this.handleSubmit}>
-
           <label>Email Address</label>
           <input required type="email" id="email" name="username" onChange={this.handleChange} value={this.state.username} placeholder="Email Address" />
-
           <label>Password</label>
           <input required type="password" id="password" name="password" onChange={this.handleChange} value={this.state.password} placeholder="Password" />
           <button type="submit">SIGN IN</button>
-
         </form>
 
         <button className="create-account-btn">CREATE AN ACCOUNT</button>
         
         <p>FORGOT PASSWORD</p>
-
-
-
-
       </div>
     );
   }

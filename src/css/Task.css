@@ -23,10 +23,6 @@
   background-color: #F6F8FF;
 }
 
-.project-title-ctn {
-
-}
-
 .project-title-ctn p {
   font-size: 1.2rem;
   color: lightgrey;
@@ -53,7 +49,6 @@
 }
 
 .right-side-info img {
-  /* width: 100%; */
   width: 20px;
   object-fit: contain;
 }
