@@ -1,5 +1,6 @@
 import React from "react";
-import '../scss/Login.scss';
+import "../scss/Login.scss";
+import Button from "react-bootstrap/Button";
 
 class Login extends React.Component {
   constructor(props) {
@@ -24,17 +25,32 @@ class Login extends React.Component {
   render() {
     return (
       <div className="login-wrapper">
-        
         <form className="login-form" onSubmit={this.handleSubmit}>
           <label>Email Address</label>
-          <input required type="email" id="email" name="username" onChange={this.handleChange} value={this.state.username} placeholder="Email Address" />
+          <input
+            required
+            type="email"
+            id="email"
+            name="username"
+            onChange={this.handleChange}
+            value={this.state.username}
+            placeholder="Email Address"
+          />
           <label>Password</label>
-          <input required type="password" id="password" name="password" onChange={this.handleChange} value={this.state.password} placeholder="Password" />
-          <button type="submit">SIGN IN</button>
+          <input
+            required
+            type="password"
+            id="password"
+            name="password"
+            onChange={this.handleChange}
+            value={this.state.password}
+            placeholder="Password"
+          />
+          <Button size="lg" type="submit" variant="dark">SIGN IN</Button>
         </form>
 
-        <button className="create-account-btn">CREATE AN ACCOUNT</button>
-        
+        <Button size="lg" block variant="outline-dark">CREATE AN ACCOUNT</Button>
+
         <p>FORGOT PASSWORD</p>
       </div>
     );

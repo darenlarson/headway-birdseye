@@ -5,6 +5,11 @@
     font-size: 1rem;
     text-align: center;
     color: #898989;
+    margin-top: 20px;
+    cursor: pointer;
+    &:hover {
+      color: black;
+    }
   }
 
   .login-form {
@@ -14,9 +19,6 @@
 
     label {
       color: #414141;
-    }
-
-    label {
       font-size: 1.4rem;
       margin-bottom: 5px;
     }
@@ -27,34 +29,13 @@
       margin-bottom: 20px;
       padding: 10px;
       font-size: 1.4rem;
-    }
-
-    button {
-      background-color: black;
-      border: 1px solid black;
-      color: white;
-      &:hover {
-        background-color: white;
-        border: 1px solid black;
-        color: black;
+      &::placeholder {
+        font-size: 1.1rem;
       }
     }
   }
 
-  button {
-    padding: 12px 0;
-    border-radius: 2px;
-    width: 100%;
-    cursor: pointer;
-  }
-
-  .create-account-btn {
-    background-color: white;
-    border: 1px solid black;
-    margin-bottom: 20px;
-    &:hover {
-      background-color: black;
-      color: white;
-    }
+  Button {
+    font-size: 1rem;
   }
 }
