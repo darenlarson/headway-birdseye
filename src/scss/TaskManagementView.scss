@@ -1,0 +1,23 @@
+.tmv-ctn {
+  width: 100%;
+  min-width: 1000px;
+  // min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  background-color: #f2f4f5;
+  .right-side-view {
+    width: 100%;
+    overflow: hidden;
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
+  @media (max-width: 1000px) {
+    min-width: unset;
+  }
+  @media (max-width: 800px) {
+    min-width: unset;
+    flex-direction: column;
+    align-items: center;
+  }
+}

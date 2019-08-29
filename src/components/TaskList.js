@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/TaskList.css';
+import '../scss/TaskList.scss';
 import Task from './Task';
 
 const TaskList = props => {

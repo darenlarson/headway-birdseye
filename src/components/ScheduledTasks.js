@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/ScheduledTasks.css';
+import '../scss/ScheduledTasks.scss';
 import DayList from './DayList';
 
 const ScheduledTasks = props => {

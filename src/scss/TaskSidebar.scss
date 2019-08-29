@@ -1,0 +1,46 @@
+.sidebar-ctn {
+  width: 30%;
+  min-width: 400px;
+  margin-left: 20px;
+  background-color: #ffffff;
+  overflow-y: auto;
+  white-space: nowrap;
+  @media (max-width: 800px) {
+    min-width: unset;
+    width: 90%;
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+  h1 {
+    margin: 15px 0 30px 0;
+    margin-left: 30px;
+    color: #071584;
+  }
+  .tabs {
+    display: flex;
+    font-size: 1.4rem;
+    margin-left: 15px;
+    div {
+      font-size: 1.2rem;
+      margin-right: 20px;
+      width: 60px;
+      text-align: center;
+      cursor: pointer;
+      color: grey;
+      padding: 3px 0;
+      &:hover {
+        color: #071584;
+      }
+    }
+    .mobile-only {
+      display: none;
+      @media (max-width: 800px) {
+        display: block;
+      }
+    }
+    .selected {
+      color: #071584;
+      border-bottom: 1px solid #071584;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.completed-task {
+  opacity: 0.5;
+}
+
+.task-ctn {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 5px;
+  border-bottom: 1px solid lightgrey;
+  background-color: white;
+  .checkbox-title {
+    display: flex;
+    .checkbox-ctn {
+      margin: 0 10px 0 0px;
+      display: flex;
+      align-items: center;
+      .fake-checkbox {
+        width: 15px;
+        height: 15px;
+        border: 1px solid grey;
+        background-color: #f6f8ff;
+      }
+    }
+    .completed-title {
+      text-decoration: line-through;
+    }
+    p {
+      font-size: 1.2rem;
+      color: lightgrey;
+    }
+    h5 {
+      font-size: 1.6rem;
+    }
+  }
+  .right-side-info {
+    // border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    .day {
+      font-size: 1.4rem;
+      color: grey;
+    }
+
+    .time {
+      font-size: 1rem;
+      color: grey;
+    }
+    img {
+      width: 20px;
+      object-fit: contain;
+    }
+  }
+}

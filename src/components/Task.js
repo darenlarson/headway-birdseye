@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/Task.css";
+import "../scss/Task.scss";
 import taskIcon from '../assets/taskIcon.png';
 
 const Task = props => {

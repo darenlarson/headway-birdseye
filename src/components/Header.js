@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/Header.css";
+import "../scss/Header.scss";
 import cog from '../assets/cog.png';
 
 class Header extends React.Component {
@@ -20,7 +20,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div className="header-ctn">
+      <div className={`header-ctn ${this.props.size}`}>
 
           <form className="search-form" onSubmit={this.handleSubmit}>
             <input
@@ -34,7 +34,7 @@ class Header extends React.Component {
 
           <div className="settings">
             <p id="daysCount">{this.props.daysLeft} days left</p>
-            <div id="upgrade">Upgrade</div>
+            <button id="upgrade">Upgrade</button>
             <img src={cog} alt="settings" />
           </div>
       </div>
