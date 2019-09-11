@@ -111,7 +111,7 @@ export const tasks = [
     title: "Fake Task5",
     dueDate: "Today",
     dueTime: "8:00am",
-    complete: true
+    complete: false
   },
   {
     id: 15,

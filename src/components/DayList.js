@@ -1,8 +1,14 @@
 import React from "react";
 import "../scss/DayList.scss";
 import TaskList from "./TaskList";
+import { Button, Grid, Paper, Typography } from '@material-ui/core'
+import { useTheme } from '@material-ui/core/styles'
 
 const DayList = props => {
+  const theme = useTheme()
+  const btnBackground = theme.palette.secondary.light
+  const btnColor = theme.palette.primary.main
+
   const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   const today = new Date();
   const todayTasks = props.tasks.filter(task => task.dueDate === props.day && task.complete === false);
@@ -16,7 +22,12 @@ const DayList = props => {
         </p>
       </div>
 
-      <button className="create-task-btn">+ CREATE TASK</button>
+      <Button
+        style={{ backgroundColor: btnBackground, fontSize: '10px', height: '75px', color: btnColor }}
+        fullWidth
+      >
+        + Create
+      </Button>
 
       <TaskList tasks={todayTasks} />
 

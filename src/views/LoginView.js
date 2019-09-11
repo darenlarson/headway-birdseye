@@ -1,27 +1,19 @@
 import React from 'react';
 import '../scss/LoginView.scss';
-import Login from '../components/Login';
-import logo from '../assets/logo.png';
-import loginWallpaper from '../assets/loginWallpaper.png';
+import LeftPane from '../components/LeftPane'
+import RightPane from '../components/RightPane'
+import { Grid, withWidth } from '@material-ui/core'
 
-const LoginView = props => {
+const LoginView = (({ history, width }) => {
   return (
-    <div className="login-view-ctn">
-
-      <section className="info-section">
-        <div className="logo-ctn">
-          <img src={logo} alt="MemSQL logo" />
-        </div>
-        <h1>Welcome to Birdseye!</h1>
-        <Login history={props.history} />
-      </section>
-
-      <div className="wallpaper">
-        <img src={loginWallpaper} alt="background" />
-      </div>
-
-    </div>
+    <Grid container justify='center'>
+      <LeftPane history={history} />
+      {width !== 'sm' && width !== 'xs'
+        ? <RightPane />
+        : undefined
+      }
+    </Grid>
   )
-}
+})
 
-export default LoginView;
+export default withWidth()(LoginView)

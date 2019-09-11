@@ -2,11 +2,11 @@ import React from 'react';
 import '../scss/TaskList.scss';
 import Task from './Task';
 
-const TaskList = props => {
+const TaskList = ({ tasks }) => {
   return (
     <div className="task-list">
 
-      {props.tasks.map(task => (
+      {tasks.map(task => (
         <Task
           key={task.id}
           project={task.project}

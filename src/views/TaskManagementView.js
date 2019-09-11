@@ -4,6 +4,7 @@ import TaskSidebar from "../components/TaskSidebar";
 import Header from "../components/Header";
 import ScheduledTasks from "../components/ScheduledTasks";
 import { tasks, projects } from '../data/tasks';
+import { withWidth } from '@material-ui/core'
 
 class TaskManagementView extends React.Component {
   constructor(props) {
@@ -21,22 +22,28 @@ class TaskManagementView extends React.Component {
   };
 
   render() {
+    const { daysLeft, list, projects, tasks } = this.state,
+          { width } = this.props
+
     return (
       <div className="tmv-ctn">
 
-        <Header daysLeft={this.state.daysLeft} size="mobile" />
+        {width === 'sm' || width === 'xs'
+        ? <Header daysLeft={daysLeft} size="mobile" />
+        : undefined
+      }
 
         <TaskSidebar
-          tasks={this.state.tasks}
-          projects={this.state.projects}
-          list={this.state.list}
+          tasks={tasks}
+          projects={projects}
+          list={list}
           changeList={this.changeList}
         />
 
         <div className="right-side-view">
-          <Header daysLeft={this.state.daysLeft} size="desktop" />
+          <Header daysLeft={daysLeft} size="desktop" />
           <ScheduledTasks
-            tasks={this.state.tasks}
+            tasks={tasks}
           />
         </div>
       </div>
@@ -44,4 +51,4 @@ class TaskManagementView extends React.Component {
   }
 }
 
-export default TaskManagementView;
+export default withWidth()(TaskManagementView)

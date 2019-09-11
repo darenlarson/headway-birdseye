@@ -1,18 +1,19 @@
 import React from "react";
 import "../scss/TaskSidebar.scss";
+import { Button, Grid, Tabs, Tab, Typography } from '@material-ui/core'
+import { useTheme, withStyles } from '@material-ui/core/styles'
 import TaskList from "./TaskList";
 import ProjectList from "./ProjectList";
 
-const TaskSidebar = props => {
-  const tasks = props.tasks.filter(task => {
-    if (props.list === 'all') {
-      return task.complete === false;
-
-    } else if (props.list === 'today') {
-      return task.complete === false && task.dueDate === 'Today'
-    } else if (props.list === 'upcoming') {
-      return task.complete === false && task.dueDate !== 'Today';
-    }
+const TaskSidebar = ({ changeList, list, projects, tasks }) => {
+  const theme = useTheme()
+  const btnBackground = theme.palette.secondary.light
+  const btnColor = theme.palette.primary.main
+  
+  const filteredTasks = tasks.filter(task => {
+    if (list === 'all') return task.complete === false;
+    else if (list === 'today') return task.complete === false && task.dueDate === 'Today'
+    else if (list === 'upcoming') return task.complete === false && task.dueDate !== 'Today';
   })
 
   return (
@@ -20,26 +21,31 @@ const TaskSidebar = props => {
       <h1>Tasks</h1>
 
       <div className="tabs">
-        <div className={props.list === 'all' ? 'selected' : undefined} onClick={() => props.changeList("all")}>
+        <div className={list === 'all' ? 'selected' : undefined} onClick={() => changeList("all")}>
            All
         </div>
-        <div className={props.list === 'projects' ? 'selected' : undefined} onClick={() => props.changeList("projects")}>
+        <div className={list === 'projects' ? 'selected' : undefined} onClick={() => changeList("projects")}>
           Projects
         </div>
-        <div className={`mobile-only ${props.list === 'today' ? 'selected' : undefined}`} onClick={() => props.changeList("today")}>
+        <div className={`mobile-only ${list === 'today' ? 'selected' : undefined}`} onClick={() => changeList("today")}>
           Today
         </div>
-        <div className={`mobile-only ${props.list === 'upcoming' ? 'selected' : undefined}`} onClick={() => props.changeList("upcoming")}>
+        <div className={`mobile-only ${list === 'upcoming' ? 'selected' : undefined}`} onClick={() => changeList("upcoming")}>
           Upcoming
         </div>
       </div>
 
-      <button className="create-task-btn">+ CREATE TASK</button>
+      <Button
+        style={{ backgroundColor: btnBackground, fontSize: '10px', height: '75px', color: btnColor }}
+        fullWidth
+      >
+        + Create
+      </Button>
 
-      {props.list !== "projects"  ? (
-        <TaskList tasks={tasks} />
+      {list !== "projects"  ? (
+        <TaskList tasks={filteredTasks} />
       ) : (
-        <ProjectList projects={props.projects} />
+        <ProjectList projects={projects} />
       )}
     </div>
   );
