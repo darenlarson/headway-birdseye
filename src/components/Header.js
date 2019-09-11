@@ -5,11 +5,12 @@ import Logo from '../assets/logo_purple.png'
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import SettingsIcon from "@material-ui/icons/Settings";
-import { AppBar, InputBase, Toolbar, Typography } from "@material-ui/core";
+import { AppBar, InputBase, Toolbar, Typography, withWidth } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   input: {
     color: '#FFFFF',
+    width: '100%',
   },
 }));
 
@@ -18,27 +19,32 @@ const Header = props => {
   const theme = useTheme()
 
   return (
-    <AppBar position="static" style={{ width: '100%' }} className={`header-ctn ${props.size}`}>
+    <AppBar position="sticky" >
+    {/* // <AppBar position={props.width !== 'xs' && props.width !== 'sm' ? 'static' : 'sticky'}  > */}
+
       <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }} >
-        <div style={{ display: 'flex' }} >
-          <img src={Logo} style={{ width: 50, marginRight: 50 }} />
-          <div style={{ backgroundColor: '#7857FF', display: 'flex', alignItems: 'center', width: 500, padding: '0 5px' }} >
+
+        <div style={{ display: 'flex', width: '70%', maxWidth: '600px', marginRight: 10 }} >
+          <img src={Logo} style={{ width: 50, marginRight: 25 }} />
+          <div style={{ backgroundColor: '#7857FF', display: 'flex', alignItems: 'center', padding: '0 5px', width: '100%' }} >
             <SearchIcon />
             <InputBase className={classes.input} color='#FFFFF' />
           </div>
         </div>
 
-        <div style={{ display: 'flex', justifyContent: 'space-between', width: 200 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', width: 150 }}>
           <Typography style={{ color: theme.palette.primary.light, fontStyle: 'italic' }} >10 days left</Typography>
           <Typography style={{ textDecoration: 'underline' }} >Upgrade</Typography>
           <SettingsIcon />
         </div>
+
       </Toolbar>
+
     </AppBar>
   );
 }
 
-export default Header
+export default withWidth()(Header)
 
 
 

@@ -54,20 +54,20 @@
   }
 }
 
-.desktop {
-  @media (min-width: 800px) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
+// .desktop {
+//   @media (min-width: 800px) {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//   }
+// }
 
-.mobile {
-  @media (max-width: 800px) {
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
+// .mobile {
+//   @media (max-width: 800px) {
+//     position: sticky;
+//     top: 0;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//   }
+// }

@@ -25,28 +25,32 @@ class TaskManagementView extends React.Component {
     const { daysLeft, list, projects, tasks } = this.state,
           { width } = this.props
 
+    console.log(width)
     return (
-      <div className="tmv-ctn">
-
-        {width === 'sm' || width === 'xs'
-        ? <Header daysLeft={daysLeft} size="mobile" />
-        : undefined
-      }
-
-        <TaskSidebar
-          tasks={tasks}
-          projects={projects}
-          list={list}
-          changeList={this.changeList}
-        />
-
-        <div className="right-side-view">
-          <Header daysLeft={daysLeft} size="desktop" />
-          <ScheduledTasks
+      <>
+        {width === 'xs' || width === 'sm'
+          ? <Header daysLeft={daysLeft} size="mobile" />
+          : undefined
+        }
+        
+        <div className="tmv-ctn">
+          <TaskSidebar
             tasks={tasks}
+            projects={projects}
+            list={list}
+            changeList={this.changeList}
           />
+
+          <div className="right-side-view">
+            {width === 'md' || width === 'lg' || width === 'xl'
+              ? <Header daysLeft={daysLeft} size="desktop" />
+              : undefined
+            }
+            
+            <ScheduledTasks tasks={tasks}/>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }
