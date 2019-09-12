@@ -3,6 +3,12 @@ import taskIcon from '../assets/taskIcon.png';
 import { Checkbox, Paper, Typography, withStyles } from '@material-ui/core'
 
 const styles = theme => ({
+  completedTask: {
+    opacity: 0.5,
+  },
+  completedTitle: {
+    textDecoration: 'line-through',
+  },
   dueTime: {
     display: 'flex',
     textAlign: 'end'
@@ -26,13 +32,13 @@ const styles = theme => ({
 const Task = ({ classes, project, title, dueDate, dueTime, completed }) => {
 
   return (
-    <Paper square className={classes.paper}>
+    <Paper square className={`${classes.paper} ${completed === true ? classes.completedTask : undefined}`}>
 
       <div style={{ display: 'flex' }}>
         <Checkbox />
         <div>
           <Typography variant="caption" color="secondary">{project}</Typography>
-          <Typography variant="subtitle1">{title}</Typography>
+          <Typography variant="subtitle1" className={`${completed === true ? classes.completedTitle : undefined}`}>{title}</Typography>
         </div>
       </div>
 

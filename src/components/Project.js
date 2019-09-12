@@ -1,13 +1,21 @@
 import React from "react";
-import "../scss/Project.scss";
-import {Paper, Typography } from '@material-ui/core'
+import {Paper, Typography, withStyles } from '@material-ui/core'
 
-const Project = ({ project }) => {
+const styles = theme => ({
+  project: {
+    height: '50px',
+    display: 'flex',
+    alignItems: 'center',
+    padding: '0 10px',
+  }
+})
+
+const Project = ({ classes, project }) => {
   return (
-    <Paper style={{ height: '50px', display: 'flex', alignItems: 'center', padding: '0 10px'}} >
+    <Paper className={classes.project} >
       <Typography variant="h6">{project}</Typography>
     </Paper>
   );
 };
 
-export default Project;
+export default withStyles(styles)(Project)

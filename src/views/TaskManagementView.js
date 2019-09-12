@@ -1,10 +1,32 @@
 import React from "react";
-import "../scss/TaskManagementView.scss";
 import TaskSidebar from "../components/TaskSidebar";
 import Header from "../components/Header";
 import ScheduledTasks from "../components/ScheduledTasks";
 import { tasks, projects } from '../data/tasks';
-import { withWidth } from '@material-ui/core'
+import { withWidth, withStyles } from '@material-ui/core'
+
+const styles = theme => ({
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    backgroundColor: '#f2f4f5',
+    [theme.breakpoints.up('md')]: {
+      flexDirection: 'row',
+      minWidth: 1000,
+      height: '100vh',
+      minHeight: '100vh',
+    }
+  },
+  rightView: {
+    width: '100%',
+    overflow: 'hidden',
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'block'
+    }
+  }
+})
 
 class TaskManagementView extends React.Component {
   constructor(props) {
@@ -18,13 +40,12 @@ class TaskManagementView extends React.Component {
   }
 
   changeList = list => {
-    console.log('changeList() invoked!')
     this.setState({ list: list });
   };
 
   render() {
     const { daysLeft, list, projects, tasks } = this.state,
-          { width } = this.props
+          { classes, width } = this.props
 
     return (
       <>
@@ -33,7 +54,7 @@ class TaskManagementView extends React.Component {
           : undefined
         }
         
-        <div className="tmv-ctn">
+        <div className={classes.container}>
           <TaskSidebar
             tasks={tasks}
             projects={projects}
@@ -41,7 +62,7 @@ class TaskManagementView extends React.Component {
             changeList={this.changeList}
           />
 
-          <div className="right-side-view">
+          <div className={classes.rightView}>
             {width === 'md' || width === 'lg' || width === 'xl'
               ? <Header daysLeft={daysLeft} />
               : undefined
@@ -55,4 +76,4 @@ class TaskManagementView extends React.Component {
   }
 }
 
-export default withWidth()(TaskManagementView)
+export default withWidth()(withStyles(styles)(TaskManagementView))

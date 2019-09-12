@@ -1,10 +1,9 @@
 import React from 'react';
-import '../scss/TaskList.scss';
 import Task from './Task';
 
 const TaskList = ({ tasks }) => {
   return (
-    <div className="task-list">
+    <>
 
       {tasks.map(task => (
         <Task
@@ -17,7 +16,7 @@ const TaskList = ({ tasks }) => {
         />
       ))}
 
-    </div>
+    </>
   )
 }
 

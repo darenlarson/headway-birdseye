@@ -1,5 +1,4 @@
 import React from 'react';
-import '../scss/LoginView.scss';
 import LeftPane from '../components/LeftPane'
 import RightPane from '../components/RightPane'
 import { Grid, withWidth } from '@material-ui/core'
