@@ -1,74 +1,54 @@
 import React from "react";
-import "../scss/Task.scss";
 import taskIcon from '../assets/taskIcon.png';
-import { Box, Checkbox, Grid, Paper, Typography } from '@material-ui/core'
+import { Checkbox, Paper, Typography, withStyles } from '@material-ui/core'
 
-const Task = props => {
-  const { project, title, dueDate, dueTime, completed } = props;
+const styles = theme => ({
+  dueTime: {
+    display: 'flex',
+    textAlign: 'end'
+  },
+  paper: {
+    marginBottom: 2,
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
+    height: '60px',
+    padding: '0px 10px 0px 3px',
+  },
+  imageContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    marginLeft: 5,
+  }
+})
+
+const Task = ({ classes, project, title, dueDate, dueTime, completed }) => {
 
   return (
-    <Paper>
-      <Grid container justify='space-between' alignItems='center' style={{ height: '60px' }} className={completed === true ? 'completed-task' : undefined} >
-        <Grid item>
-          <Grid container>
-            <Grid item>
-              <Checkbox />
-            </Grid>
-            <Grid item>
-              <Typography variant="caption" color="secondary">{project}</Typography>
-              <Typography variant="subtitle1">{title}</Typography>
-            </Grid>
-          </Grid>
-        </Grid>
+    <Paper square className={classes.paper}>
 
-        <Grid item>
-          <Grid container>
+      <div style={{ display: 'flex' }}>
+        <Checkbox />
+        <div>
+          <Typography variant="caption" color="secondary">{project}</Typography>
+          <Typography variant="subtitle1">{title}</Typography>
+        </div>
+      </div>
 
-            <Grid item style={{ marginRight: '5px' }}>
-              <Grid container direction="column">
-                <Typography align="right" variant="body2" color="secondary">{dueDate}</Typography>
-                <Typography align="right" variant="caption" color="secondary">{dueTime}</Typography>
-              </Grid>
-            </Grid>
+      <div className={classes.dueTime}>
+        <div>
+          <Typography align="right" variant="body2" color="secondary">{dueDate}</Typography>
+          <Typography align="right" variant="caption" color="secondary">{dueTime}</Typography>
+        </div>
+        <div className={classes.imageContainer}>
+          <img src={taskIcon} alt="task icon" />
+        </div>
+      </div>
 
-            <Grid item>
-              <Grid container style={{ height: '100%'}} alignItems="center">
-                <Grid item >
-                  <Box component="img" src={taskIcon} />
-                </Grid>
-              </Grid>
-            </Grid>
-
-          </Grid>
-        </Grid>
-
-      </Grid>
     </Paper>
+  )
+}
 
 
-
-
-    // <div className={`task-ctn ${completed === true ? 'completed-task' : undefined}`} >
-    //   <div className="checkbox-title">
-    //     <div className="checkbox-ctn">
-    //       <div className="fake-checkbox"></div>
-    //     </div>
-
-    //     <div className="project-title-ctn">
-    //       <p>{project}</p>
-    //       <h5 className={completed === true ? 'completed-title' : undefined} >{title}</h5>
-    //     </div>
-    //   </div>
-
-    //   <div className="right-side-info">
-    //     <div className="schedule-info">
-    //       <p className="day">{dueDate}</p>
-    //       <p className="time">{dueTime}</p>
-    //     </div>
-    //     <img src={taskIcon} alt="task icon" />
-    //   </div>
-    // </div>
-  );
-};
-
-export default Task;
+export default withStyles(styles)(Task)

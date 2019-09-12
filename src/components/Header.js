@@ -1,6 +1,5 @@
 import React from "react";
 import "../scss/Header.scss";
-import cog from '../assets/cog.png';
 import Logo from '../assets/logo_purple.png'
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
@@ -20,12 +19,11 @@ const Header = props => {
 
   return (
     <AppBar position="sticky" >
-    {/* // <AppBar position={props.width !== 'xs' && props.width !== 'sm' ? 'static' : 'sticky'}  > */}
 
       <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }} >
 
         <div style={{ display: 'flex', width: '70%', maxWidth: '600px', marginRight: 10 }} >
-          <img src={Logo} style={{ width: 50, marginRight: 25 }} />
+          <img src={Logo} alt="logo" style={{ width: 50, marginRight: 25 }} />
           <div style={{ backgroundColor: '#7857FF', display: 'flex', alignItems: 'center', padding: '0 5px', width: '100%' }} >
             <SearchIcon />
             <InputBase className={classes.input} color='#FFFFF' />
@@ -45,48 +43,3 @@ const Header = props => {
 }
 
 export default withWidth()(Header)
-
-
-
-
-// class Header extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       search: ""
-//     };
-//   }
-
-//   // Handler for entering form data to state
-//   handleChange = event => {
-//     this.setState({ [event.target.name]: event.target.value });
-//   };
-
-//   // Submits form and invokes loginUser()
-//   handleSubmit = e => {};
-
-//   render() {
-//     return (
-//       <div className={`header-ctn ${this.props.size}`}>
-
-//           <form className="search-form" onSubmit={this.handleSubmit}>
-//             <input
-//               type="search"
-//               name="search"
-//               onChange={this.handleChange}
-//               value={this.state.username}
-//               placeholder="Search"
-//             />
-//           </form>
-
-//           <div className="settings">
-//             <p id="daysCount">{this.props.daysLeft} days left</p>
-//             <button id="upgrade">Upgrade</button>
-//             <img src={cog} alt="settings" />
-//           </div>
-//       </div>
-//     );
-//   }
-// }
-
-// export default Header;

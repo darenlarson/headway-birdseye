@@ -8,10 +8,12 @@ const LoginView = (({ history, width }) => {
   return (
     <Grid container justify='center'>
       <LeftPane history={history} />
+
       {width !== 'sm' && width !== 'xs'
         ? <RightPane />
         : undefined
       }
+      
     </Grid>
   )
 })

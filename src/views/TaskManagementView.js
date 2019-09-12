@@ -25,11 +25,10 @@ class TaskManagementView extends React.Component {
     const { daysLeft, list, projects, tasks } = this.state,
           { width } = this.props
 
-    console.log(width)
     return (
       <>
         {width === 'xs' || width === 'sm'
-          ? <Header daysLeft={daysLeft} size="mobile" />
+          ? <Header daysLeft={daysLeft} />
           : undefined
         }
         
@@ -43,7 +42,7 @@ class TaskManagementView extends React.Component {
 
           <div className="right-side-view">
             {width === 'md' || width === 'lg' || width === 'xl'
-              ? <Header daysLeft={daysLeft} size="desktop" />
+              ? <Header daysLeft={daysLeft} />
               : undefined
             }
             

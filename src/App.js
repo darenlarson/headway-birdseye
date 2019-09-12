@@ -1,7 +1,5 @@
 import React from 'react';
 import { Route } from "react-router-dom";
-import './scss/Reset.scss'
-import './scss/App.scss';
 import LoginView from './views/LoginView';
 import TaskManagementView from './views/TaskManagementView';
 

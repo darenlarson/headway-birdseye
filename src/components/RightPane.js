@@ -1,6 +1,6 @@
 import React from 'react';
 import Wallpaper from '../assets/loginWallpaper.png'
-import { Box, Grid, withStyles } from '@material-ui/core'
+import { Grid, withStyles } from '@material-ui/core'
 
 const styles = {
   wallpaper: {

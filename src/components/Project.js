@@ -1,11 +1,12 @@
 import React from "react";
 import "../scss/Project.scss";
+import {Paper, Typography } from '@material-ui/core'
 
-const Project = props => {
+const Project = ({ project }) => {
   return (
-    <div className="project-ctn">
-      <h5>{props.project}</h5>
-    </div>
+    <Paper style={{ height: '50px', display: 'flex', alignItems: 'center', padding: '0 10px'}} >
+      <Typography variant="h6">{project}</Typography>
+    </Paper>
   );
 };
 

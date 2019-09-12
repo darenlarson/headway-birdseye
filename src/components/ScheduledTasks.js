@@ -2,11 +2,11 @@ import React from 'react';
 import '../scss/ScheduledTasks.scss';
 import DayList from './DayList';
 
-const ScheduledTasks = props => {
+const ScheduledTasks = ({ tasks }) => {
   return (
     <div className="scheduled-tasks-ctn">
-      <DayList tasks={props.tasks} day="Today" />
-      <DayList tasks={props.tasks} day="Tomorrow" />
+      <DayList tasks={tasks} day="Today" />
+      <DayList tasks={tasks} day="Tomorrow" />
     </div>
   )
 }

@@ -7,7 +7,7 @@ const ProjectList = props => {
     <div className="task-list">
 
       {props.projects.map(project => (
-        <Project project={project} />
+        <Project project={project} key={project} />
       ))}
 
     </div>

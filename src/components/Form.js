@@ -26,7 +26,7 @@ class Form extends Component {
 
   render() {
     const { email, password } = this.state,
-    { classes } = this.props
+          { classes } = this.props
 
     return (
       <>
