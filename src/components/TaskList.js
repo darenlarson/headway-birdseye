@@ -1,10 +1,9 @@
-import React from 'react';
-import Task from './Task';
+import React from 'react'
+import Task from './Task'
 
 const TaskList = ({ tasks }) => {
   return (
     <>
-
       {tasks.map(task => (
         <Task
           key={task.id}
@@ -15,9 +14,8 @@ const TaskList = ({ tasks }) => {
           completed={task.complete}
         />
       ))}
-
     </>
   )
 }
 
-export default TaskList;
+export default TaskList

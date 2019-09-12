@@ -1,5 +1,5 @@
-import React from "react";
-import {Paper, Typography, withStyles } from '@material-ui/core'
+import React from "react"
+import { Paper, Typography, withStyles } from '@material-ui/core'
 
 const styles = theme => ({
   project: {
@@ -15,7 +15,7 @@ const Project = ({ classes, project }) => {
     <Paper className={classes.project} >
       <Typography variant="h6">{project}</Typography>
     </Paper>
-  );
-};
+  )
+}
 
 export default withStyles(styles)(Project)

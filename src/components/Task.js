@@ -1,5 +1,5 @@
-import React from "react";
-import taskIcon from '../assets/taskIcon.png';
+import React from "react"
+import taskIcon from '../assets/taskIcon.png'
 import { Checkbox, Paper, Typography, withStyles } from '@material-ui/core'
 
 const styles = theme => ({
@@ -30,7 +30,6 @@ const styles = theme => ({
 })
 
 const Task = ({ classes, project, title, dueDate, dueTime, completed }) => {
-
   return (
     <Paper square className={`${classes.paper} ${completed === true ? classes.completedTask : undefined}`}>
 

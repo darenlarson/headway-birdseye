@@ -13,7 +13,6 @@ const styles = theme => ({
     backgroundColor: '#f2f4f5',
     [theme.breakpoints.up('md')]: {
       flexDirection: 'row',
-      minWidth: 1000,
       height: '100vh',
       minHeight: '100vh',
     }
@@ -36,15 +35,16 @@ class TaskManagementView extends React.Component {
       projects: projects,
       list: "all",
       daysLeft: 10,
+      selectedIndex: 0,
     };
   }
 
-  changeList = list => {
-    this.setState({ list: list });
+  changeList = (list, index) => {
+    this.setState({ list: list, selectedIndex: index });
   };
 
   render() {
-    const { daysLeft, list, projects, tasks } = this.state,
+    const { daysLeft, list, projects, selectedIndex, tasks } = this.state,
           { classes, width } = this.props
 
     return (
@@ -60,6 +60,7 @@ class TaskManagementView extends React.Component {
             projects={projects}
             list={list}
             changeList={this.changeList}
+            selectedIndex={selectedIndex}
           />
 
           <div className={classes.rightView}>

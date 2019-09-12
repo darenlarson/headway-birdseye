@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 import { Button, Container, Paper, Tab, Tabs, Typography, withStyles } from '@material-ui/core'
-import TaskList from "./TaskList";
-import ProjectList from "./ProjectList";
+import TaskList from "./TaskList"
+import ProjectList from "./ProjectList"
 
 const styles = theme => ({
   button: {
@@ -41,7 +41,7 @@ const styles = theme => ({
 })
 
 
-const TaskSidebar = ({ changeList, classes, list, projects, tasks }) => {
+const TaskSidebar = ({ changeList, classes, list, projects, selectedIndex, tasks }) => {
   const filteredTasks = tasks.filter(task => {
     if (list === 'all') return task.complete === false;
     else if (list === 'today') return task.complete === false && task.dueDate === 'Today'
@@ -50,29 +50,16 @@ const TaskSidebar = ({ changeList, classes, list, projects, tasks }) => {
   })
 
   const selectTab = (e, index) => {
-    let tab
-
-    if (index === 0) tab = 'all'
-    else if (index === 1) tab = 'projects'
-    else if (index === 2) tab = 'today'
-    else if (index === 3) tab = 'upcoming'
-
-    changeList(tab)
+    let tabs = ['all', 'projects', 'today', 'upcoming']
+    changeList(tabs[index], index)
   }
-
-  // To update the indicator line in the tabs
-  let index
-  if (list === 'all') index = 0
-  else if (list === 'projects') index = 1
-  else if (list === 'today') index = 2
-  else if (list === 'upcoming') index = 3
 
   return (
     <Container className={classes.container}>
       <Paper className={classes.headerPaper}>
         <Typography color="primary" variant="h4">Tasks</Typography>
 
-        <Tabs value={index} indicatorColor="primary" classes={{ root: classes.tabs }} onChange={selectTab} >
+        <Tabs value={selectedIndex} indicatorColor="primary" classes={{ root: classes.tabs }} onChange={selectTab} >
           <Tab label="All"       className={classes.tab} disableRipple />
           <Tab label="Projects"  className={classes.tab} disableRipple />
           <Tab label="Today"     className={classes.tab} disableRipple />

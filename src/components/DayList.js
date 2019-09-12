@@ -1,5 +1,4 @@
 import React from "react";
-// import "../scss/DayList.scss";
 import TaskList from "./TaskList";
 import { Button, Paper, Typography, withStyles } from '@material-ui/core'
 
@@ -77,19 +76,15 @@ const DayList = ({ classes, day, tasks }) => {
       <TaskList tasks={todayTasks} />
 
       <div className={`${classes.completedBarrier} ${todayCompletedTasks.length === 0 && classes.hideCompleted}`} >
-
         <div className={classes.lineContainer}>
           <div className={classes.topLine}>&nbsp;</div>
           <div className={classes.bottomLine}>&nbsp;</div>
         </div>
-
         <Typography variant="body2" className={classes.completedTextBorder}>Completed</Typography>
-
         <div className={classes.lineContainer}>
           <div className={classes.topLine}>&nbsp;</div>
           <div className={classes.bottomLine}>&nbsp;</div>
         </div>
-
       </div>
 
       <TaskList tasks={todayCompletedTasks} />

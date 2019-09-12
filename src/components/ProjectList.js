@@ -1,11 +1,11 @@
-import React from 'react';
-import Project from './Project';
+import React from 'react'
+import Project from './Project'
 
-const ProjectList = props => {
+const ProjectList = ({ projects }) => {
   return (
     <div>
 
-      {props.projects.map(project => (
+      {projects.map(project => (
         <Project project={project} key={project} />
       ))}
 
@@ -13,4 +13,4 @@ const ProjectList = props => {
   )
 }
 
-export default ProjectList;
+export default ProjectList

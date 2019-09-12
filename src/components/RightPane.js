@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Wallpaper from '../assets/loginWallpaper.png'
 import { Grid, withStyles } from '@material-ui/core'
 
