@@ -18,6 +18,7 @@ class TaskManagementView extends React.Component {
   }
 
   changeList = list => {
+    console.log('changeList() invoked!')
     this.setState({ list: list });
   };
 

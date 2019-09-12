@@ -9,6 +9,9 @@ const styles = theme => ({
     fontSize: '10px',
     height: '75px',
     margin: '2px 0',
+    '&:focus': {
+      outline: 'none'
+    }
   },
   date: {
     color: theme.palette.secondary.main
